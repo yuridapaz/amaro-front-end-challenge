@@ -1,0 +1,56 @@
+.purchase__container {
+  width: 100%;
+  height: 8rem;
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  box-shadow: 0 -0.8rem 1rem rgb(0 0 0 / 8%);
+}
+
+.purchase__container * {
+  max-width: 500px;
+}
+
+.total__purchase__div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total_a_pagar {
+  font-size: 1.2rem;
+}
+
+.total__purchase__value {
+  font-size: 1.1rem;
+}
+
+.purchase__installments {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-size: 0.6rem;
+  color: #999;
+}
+
+.purchase__installments p {
+  text-align: end;
+  width: 210px;
+}
+
+.purchase__finish__btn {
+  width: 100%;
+  height: 2.5rem;
+  background-color: black;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 300;
+}

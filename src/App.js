@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { productsClient as createProductsClient } from './services/productsClient';
 import IndexAmaroPage from './pages/indexPage';
 import ProductPage from './pages/productPage';
+import ShoppingCartPage from './pages/shoppingCartPage';
 
 function App() {
   const productsClient = createProductsClient();
@@ -17,6 +18,7 @@ function App() {
             path='/product/:nomedoproduto'
             element={<ProductPage productList={productList} />}
           />
+          <Route path='/shopping-cart' element={<ShoppingCartPage />} />
         </Routes>
       </Router>
     </>

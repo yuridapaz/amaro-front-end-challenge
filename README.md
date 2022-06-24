@@ -7,7 +7,7 @@ O objetivo do projeto é construir uma página de catálogo para alguns dos best
 - [x] Header com searchbar para pesquisar os produtos
 - [x] Listar os produtos na página (requisição JSON)
 - [x] Criar uma página para mostrar a descrição específica do produto
-- [ ] Shopping Cart
+- [x] Shopping Cart Page
 - [ ] Adicionar e remover produtos no shopping cart por tamanhos (P, M, G)
 - [ ] Shopping Cart com valor total dos itens
 - [ ] Shopping Cart deve ficar salvo na memória do navegador
