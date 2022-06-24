@@ -4,9 +4,9 @@ O objetivo do projeto é construir uma página de catálogo para alguns dos best
 
 ## Entregáveis
 
-- [ ] Header com searchbar para pesquisar os produtos
-- [ ] Listar os produtos na página (requisição JSON)
-- [ ] Criar uma página para mostrar a descrição específica do produto
+- [x] Header com searchbar para pesquisar os produtos
+- [x] Listar os produtos na página (requisição JSON)
+- [x] Criar uma página para mostrar a descrição específica do produto
 - [ ] Shopping Cart
 - [ ] Adicionar e remover produtos no shopping cart por tamanhos (P, M, G)
 - [ ] Shopping Cart com valor total dos itens
