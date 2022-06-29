@@ -10,7 +10,7 @@ O objetivo do projeto é construir uma página de catálogo para alguns dos best
 - [x] Shopping Cart Page
 - [x] Adicionar e remover produtos no shopping cart por tamanhos (P, M, G)
 - [x] Shopping Cart com valor total dos itens
-- [] Shopping Cart deve ficar salvo na memória do navegador
+- [x] Shopping Cart deve ficar salvo na memória do navegador
 
 #### Extra:
 
