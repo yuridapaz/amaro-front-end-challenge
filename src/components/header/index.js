@@ -4,7 +4,7 @@ import './index.css';
 import { ShoppingCartContext } from '../../providers/shoppingCart';
 import { BiShoppingBag, BiSearchAlt2 } from 'react-icons/bi';
 
-const HeaderComponent = () => {
+const HeaderComponent = ({ onChange, onSubmit, value }) => {
   const { cartItems, calcCartQtd } = React.useContext(ShoppingCartContext);
   const totalQtd = calcCartQtd(cartItems);
 
@@ -30,8 +30,14 @@ const HeaderComponent = () => {
         </div>
       </div>
       <div className='header__search__mobile'>
-        <form action='' className='header__search__form'>
-          <input type='text' name='searchbox' placeholder='O que você está procurando ?' />
+        <form action='' className='header__search__form' onSubmit={onSubmit}>
+          <input
+            type='text'
+            name='searchbox'
+            placeholder='O que você está procurando ?'
+            onChange={onChange}
+            value={value}
+          />
           <button type='submit'>
             <BiSearchAlt2 />
           </button>
