@@ -14,7 +14,7 @@ const ProductPage = ({ productList }) => {
           return product.code_color === nomedoproduto;
         })
         .map((product, i) => {
-          return <ProductContainerDisplay product={product} key={`${i}${product.code_color}`} />;
+          return <ProductContainerDisplay product={product} key={product.code_color} />;
         })}
     </>
   );

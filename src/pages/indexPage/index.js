@@ -18,7 +18,7 @@ const IndexAmaroPage = ({ productList }) => {
               key={i}
               className='product__card__link'
             >
-              <ProductCard key={i} product={product} />
+              <ProductCard product={product} />
             </Link>
           );
         })}

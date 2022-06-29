@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.css';
+import { Link } from 'react-router-dom';
+import { createCartItem } from '../../../helpers/createCartItem';
+import { ShoppingCartContext } from '../../../providers/shoppingCart';
 
 const ProductContainerDisplay = ({ product }) => {
+  const [sizeProps, setSizeProps] = useState();
+  const [selectSize, setSelectSize] = useState('hide');
+  const { cartItems, addToCart } = React.useContext(ShoppingCartContext);
+
+  function comprarProduto(product, size) {
+    const price = Number(product.actual_price.replace(',', '.').replace(/[^0-9.-]+/g, ''));
+    if (sizeProps != undefined) {
+      const item = createCartItem(product, size, price);
+      addToCart(item, cartItems);
+    }
+    if (sizeProps == undefined) setSelectSize('show');
+  }
+
   return (
     <>
       <div className='product__container__display'>
@@ -19,15 +35,37 @@ const ProductContainerDisplay = ({ product }) => {
           </p>
           <div className='product__sizes'>
             <p className='product__sizes__title'>Tamanhos:</p>
-            <div className='product__sizes__display'>
-              {product.sizes.map((sizes) => {
-                return <button className='product__size__btn'>{sizes.size} </button>;
+            <div className={`product__sizes__display ${selectSize}`}>
+              {product.sizes.map((sizeObject) => {
+                return (
+                  <div key={sizeObject.size}>
+                    <input
+                      className='hidebox'
+                      type='radio'
+                      name='size'
+                      id={sizeObject.size}
+                      value={sizeObject.size}
+                      disabled={!sizeObject.available}
+                      onChange={() => {
+                        setSizeProps(sizeObject);
+                        setSelectSize('hide');
+                      }}
+                    />
+                    <label htmlFor={sizeObject.size} className='product__size__btn'>
+                      {sizeObject.size}
+                    </label>
+                  </div>
+                );
               })}
             </div>
           </div>
         </div>
         <div className='shopping__button__container'>
-          <button className='shopping__button'>COMPRAR</button>
+          <Link to={`/shopping-cart`}>
+            <button className='shopping__button' onClick={() => comprarProduto(product, sizeProps)}>
+              COMPRAR
+            </button>
+          </Link>
         </div>
       </div>
     </>

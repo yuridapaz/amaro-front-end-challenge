@@ -1,8 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './index.css';
+import { ShoppingCartContext } from '../../providers/shoppingCart';
 import { BiShoppingBag, BiSearchAlt2 } from 'react-icons/bi';
 
-const index = () => {
+const HeaderComponent = () => {
+  const { cartItems, calcCartQtd } = React.useContext(ShoppingCartContext);
+  const totalQtd = calcCartQtd(cartItems);
+
   return (
     <div className='app__header'>
       <div className='header__content'>
@@ -18,9 +23,10 @@ const index = () => {
         </div>
         {/* <div className="header__search__desktop"></div> */}
         <div className='header__icons__mobile'>
-          <i>
+          <Link to={'/shopping-cart'}>
+            {totalQtd == 0 ? '' : <i>{totalQtd}</i>}
             <BiShoppingBag />
-          </i>
+          </Link>
         </div>
       </div>
       <div className='header__search__mobile'>
@@ -35,4 +41,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default HeaderComponent;

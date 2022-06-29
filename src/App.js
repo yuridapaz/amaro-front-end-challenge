@@ -4,6 +4,7 @@ import { productsClient as createProductsClient } from './services/productsClien
 import IndexAmaroPage from './pages/indexPage';
 import ProductPage from './pages/productPage';
 import ShoppingCartPage from './pages/shoppingCartPage';
+import { ShoppingCartContext } from './providers/shoppingCart';
 
 function App() {
   const productsClient = createProductsClient();

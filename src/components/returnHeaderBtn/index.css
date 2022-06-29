@@ -10,7 +10,12 @@
   position: fixed;
 }
 
+.header__div a {
+  text-decoration: none;
+}
+
 .header__button {
+  cursor: pointer;
   border: none;
   background-color: #e4e4e4;
   border-radius: 1rem;

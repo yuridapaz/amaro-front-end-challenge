@@ -36,6 +36,7 @@
 
 .product__color span {
   text-transform: lowercase;
+  font-weight: 500;
 }
 
 .product__sizes {
@@ -46,25 +47,56 @@
 }
 
 .product__sizes__title {
+  font-size: 0.9rem;
   margin-bottom: 0.4rem;
 }
 
 .product__sizes__display {
-  /* border: 1px solid blue; */
   width: 11rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+.product__sizes__display::after {
+  content: 'Selecionar tamanho';
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  color: red;
+}
+
+.hide.product__sizes__display::after {
+  display: none;
+}
+
+.hidebox {
+  display: none;
+}
+
 .product__size__btn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
   font-weight: 300;
   margin: 0.3rem;
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  border: 2px solid #e4e4e4;
+  border: 1px solid #ccc;
   background: none;
+}
+
+input[type='radio']:checked + .product__size__btn {
+  cursor: default;
+  background-color: #000;
+  color: #fff;
+}
+
+input[type='radio']:disabled + .product__size__btn {
+  cursor: default;
+  background-color: #e5e5e5;
 }
 
 .shopping__button__container {
@@ -75,6 +107,7 @@
 }
 
 .shopping__button {
+  cursor: pointer;
   width: 100%;
   height: 3rem;
   font-size: 1.2rem;
