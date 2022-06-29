@@ -15,5 +15,5 @@ O objetivo do projeto é construir uma página de catálogo para alguns dos best
 #### Extra:
 
 - [x] Adicionar funcionalidade de adicionar/remover mais itens dentro do Shopping Cart
-- [ ] Filtro para os produtos
+- [x] Filtro para os produtos
 - [x] Alguns produtos não tem estoque, mostrar apenas os itens com estoque disponível
