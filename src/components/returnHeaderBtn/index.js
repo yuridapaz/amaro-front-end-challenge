@@ -5,13 +5,15 @@ import { BiArrowBack } from 'react-icons/bi';
 
 const ReturnHeaderButton = () => {
   return (
-    <div className='header__div'>
-      <Link to={'/'}>
-        <button className='header__button'>
-          <BiArrowBack className='header__button__icon' />
-          Voltar
-        </button>
-      </Link>
+    <div className='full__header__div'>
+      <div className='header__div'>
+        <Link to={'/'}>
+          <button className='header__button'>
+            <BiArrowBack className='header__button__icon' />
+            Voltar
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

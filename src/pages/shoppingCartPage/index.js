@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CartProductCard from '../../components/cartProductCard/index';
 import ReturnHeaderButton from '../../components/returnHeaderBtn';
 import PurchaseContainer from './purchaseContainer';
@@ -22,6 +22,7 @@ const ShoppingCartPage = () => {
             />
           );
         })}
+
         <PurchaseContainer />
       </ShoppingCartContainer>
     </>

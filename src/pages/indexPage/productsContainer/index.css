@@ -1,4 +1,4 @@
-.products__container {
+.products__container__index {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -14,4 +14,24 @@
 
 .product__card__link:visited {
   color: black;
+}
+
+@media screen and (min-width: 768px) {
+  .products__container__index {
+    justify-content: space-around;
+  }
+
+  .product__card__link {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .products__container__index {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  .product__card__link {
+    width: 25%;
+  }
 }

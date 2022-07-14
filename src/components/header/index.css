@@ -72,3 +72,29 @@
   font-size: 1.3rem;
   cursor: pointer;
 }
+
+.header__search__desktop {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .header__content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .header__search__mobile {
+    display: none;
+  }
+
+  .header__search__desktop {
+    display: block;
+    flex: 1;
+    margin: 0 3rem;
+  }
+
+  .header__search__form input {
+    font-size: 1.2rem;
+  }
+}

@@ -3,14 +3,14 @@ import './index.css';
 
 const index = ({ product }) => {
   return (
-    <div className='product__card__container'>
-      <div className='product__img__div'>
+    <div className='productCard__container'>
+      <div className='productCard__img__div'>
         <img src={product.image} alt='' />
       </div>
-      <div className='product__description'>
-        <h1 className='product__name'>{product.name}</h1>
-        <p className='product__price'>
-          <span className='actual__price'>{product.actual_price}</span>
+      <div className='productCard__description'>
+        <h1 className='productCard__name'>{product.name}</h1>
+        <p className='productCard__price'>
+          <span className='actualCard__price'>{product.actual_price}</span>
           <span className='installments'>{product.installments}</span>
         </p>
       </div>

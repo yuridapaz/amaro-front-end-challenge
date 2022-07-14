@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './index.css';
 import { Link } from 'react-router-dom';
 import { createCartItem } from '../../../helpers/createCartItem';
@@ -11,11 +11,11 @@ const ProductContainerDisplay = ({ product }) => {
 
   function comprarProduto(product, size) {
     const price = Number(product.actual_price.replace(',', '.').replace(/[^0-9.-]+/g, ''));
-    if (sizeProps != undefined) {
+    if (sizeProps !== undefined) {
       const item = createCartItem(product, size, price);
       addToCart(item, cartItems);
     }
-    if (sizeProps == undefined) setSelectSize('show');
+    if (sizeProps === undefined) setSelectSize('show');
   }
 
   return (
@@ -58,6 +58,16 @@ const ProductContainerDisplay = ({ product }) => {
                 );
               })}
             </div>
+          </div>
+          <div className='shopping__button__container__desktop'>
+            <Link to={`/shopping-cart`}>
+              <button
+                className='shopping__button'
+                onClick={() => comprarProduto(product, sizeProps)}
+              >
+                COMPRAR
+              </button>
+            </Link>
           </div>
         </div>
         <div className='shopping__button__container'>

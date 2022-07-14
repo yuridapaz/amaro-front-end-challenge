@@ -13,7 +13,7 @@
 }
 
 .purchase__container * {
-  max-width: 500px;
+  max-width: 700px;
 }
 
 .total__purchase__div {
@@ -53,4 +53,21 @@
   border-radius: 5px;
   font-size: 1rem;
   font-weight: 300;
+}
+
+@media screen and (min-width: 768px) {
+  .total_a_pagar {
+    font-size: 1.7rem;
+  }
+
+  .total__purchase__value {
+    font-size: 1.7rem;
+  }
+
+  .purchase__finish__btn {
+    width: 400px;
+    height: 3rem;
+    font-size: 1.3rem;
+    letter-spacing: 5px;
+  }
 }

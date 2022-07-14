@@ -1,33 +1,42 @@
-.product__card__container {
+.productCard__container {
   width: 100%;
   height: auto;
   padding: 0.5rem;
-  /* background-color: #999; */
 }
 
-.product__img__div img {
+.productCard__img__div img {
   width: 100%;
   object-fit: cover;
 }
 
-.product__description {
+.productCard__description {
   padding: 0.5rem 0;
 }
 
-.product__name {
+.productCard__name {
   font-size: 0.8rem;
   font-weight: 500;
 }
 
-.product__price {
+.productCard__price {
   font-size: 0.8rem;
 }
 
-.actual__price {
+.actualCard__price {
   font-weight: 600;
   margin-right: 0.6rem;
 }
 
 .installments {
   color: #999;
+}
+
+@media screen and (min-width: 768px) {
+  .productCard__name {
+    font-size: 1rem;
+  }
+
+  .productCard__price {
+    font-size: 0.85rem;
+  }
 }
