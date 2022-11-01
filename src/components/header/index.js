@@ -37,7 +37,7 @@ const HeaderComponent = ({ onChange, onSubmit, value }) => {
         </div>
         <div className='header__icons__mobile'>
           <Link to={'/shopping-cart'}>
-            {totalQtd == 0 ? '' : <i>{totalQtd}</i>}
+            {totalQtd === 0 ? '' : <i>{totalQtd}</i>}
             <BiShoppingBag />
           </Link>
         </div>

@@ -4,16 +4,61 @@ export const ShoppingCartContext = React.createContext([]);
 
 const ShoppingCartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState(() => {
-    const data = localStorage.getItem('shoppingCart');
-    return data ? JSON.parse(data) : [];
+    // const data = localStorage.getItem('shoppingCart');
+    // return data ? JSON.parse(data) : [];
+    return {
+      test: {
+        name: 'VESTIDO TRANSPASSE BOW',
+        style: '20002605',
+        code_color: '20002605_613',
+        color_slug: 'tapecaria',
+        color: 'TAPEÇARIA',
+        on_sale: false,
+        regular_price: 'R$ 199,90',
+        actual_price: 'R$ 199,90',
+        discount_percentage: '',
+        installments: '3x R$ 66,63',
+        image:
+          'https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912',
+        sizes: [
+          {
+            available: false,
+            size: 'PP',
+            sku: '5807_343_0_PP',
+          },
+          {
+            available: true,
+            size: 'P',
+            sku: '5807_343_0_P',
+          },
+          {
+            available: true,
+            size: 'M',
+            sku: '5807_343_0_M',
+          },
+          {
+            available: true,
+            size: 'G',
+            sku: '5807_343_0_G',
+          },
+          {
+            available: false,
+            size: 'GG',
+            sku: '5807_343_0_GG',
+          },
+        ],
+      },
+    };
   });
+
+  // const [cartItems, setCartItems] = useState({});
 
   useEffect(() => {
     localStorage.setItem('shoppingCart', JSON.stringify(cartItems));
   }, [cartItems]);
 
   function alreadyInShoppingCart(product, cartItems) {
-    if (cartItems.find((currentProduct) => currentProduct.tamanho.sku == product.tamanho.sku)) {
+    if (cartItems.find((currentProduct) => currentProduct.tamanho.sku === product.tamanho.sku)) {
       return true;
     }
 
@@ -25,13 +70,14 @@ const ShoppingCartProvider = ({ children }) => {
       const newShoppingCart = [...cartItems, product];
       setCartItems(newShoppingCart);
     } else {
-      cartItems.map((currentProduct) => {
-        if (currentProduct.tamanho.sku == product.tamanho.sku) {
-          addQtd(currentProduct);
-        }
-      });
-      const newShoppingCart = [...cartItems];
-      setCartItems(newShoppingCart);
+      // eslint-disable-next-line array-callback-return
+      // cartItems.map((currentProduct) => {
+      //   if (currentProduct.tamanho.sku === product.tamanho.sku) {
+      //     addQtd(currentProduct);
+      //   }
+      // });
+      // const newShoppingCart = [...cartItems];
+      // setCartItems(newShoppingCart);
     }
   }
 
@@ -58,12 +104,12 @@ const ShoppingCartProvider = ({ children }) => {
 
   const calcTotalPrice = (cart) => {
     if (cart.length === 0) return 0;
-    return cart.map((product) => product.price * product.qtd).reduce((prev, curr) => prev + curr);
+    // return cart.map((product) => product.price * product.qtd).reduce((prev, curr) => prev + curr);
   };
 
   const calcCartQtd = (cart) => {
     if (cart.length === 0) return 0;
-    return cartItems.map((product) => product.qtd).reduce((prev, curr) => prev + curr);
+    // return cartItems.map((product) => product.qtd).reduce((prev, curr) => prev + curr);
   };
 
   return (

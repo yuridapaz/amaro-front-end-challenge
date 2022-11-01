@@ -12,7 +12,3 @@ function createCartItem({ name, code_color, color, actual_price, image }, tamanh
 }
 
 export { createCartItem };
-
-// calcPrice: () => {
-//   return Number(actual_price.replace(',', '.').replace(/[^0-9.-]+/g, ''));
-// },
